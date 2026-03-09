@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibhanshu Waghmare - AI Engineer | Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0a192f;
+  --bg-light: #112240;
+  --text-primary: #ccd6f6;
+  --text-secondary: #8892b0;
+  --accent: #64ffda;
+  --accent-hover: #52e3c2;
+  --white: #e6f1ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 5%;
+  z-index: 1000;
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  animation: fadeInLeft 1s ease-out;
+}
+
+.hero-text h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.hero-text p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background: rgba(100, 255, 218, 0.1);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: var(--accent);
+  color: var(--bg-dark);
+  border: 2px solid var(--accent);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 1s ease-out;
+}
+
+.profile-pic {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 5px solid var(--accent);
+  box-shadow: 0 0 50px rgba(100, 255, 218, 0.3);
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stat-box {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s;
+}
+
+.stat-box:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-box p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Skills Section */
+.skills {
+  padding: 100px 5%;
+  background: var(--bg-light);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-category {
+  background: var(--bg-dark);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s;
+}
+
+.skill-category:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.skill-category h3 {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-tag {
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  transition: all 0.3s;
+}
+
+.skill-tag:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+/* Experience Section */
+.experience {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s;
+}
+
+.timeline-content:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 4px solid var(--bg-dark);
+  z-index: 1;
+}
+
+.timeline-content h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content .date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Projects Section */
+.projects {
+  padding: 100px 5%;
+  background: var(--bg-light);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background: var(--bg-dark);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-10px);
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-content h3 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.project-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.project-link:hover {
+  color: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+/* Contact Section */
+.contact {
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.contact-content p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: 2px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  background: var(--bg-light);
+  padding: 2rem 5%;
+  text-align: center;
+  color: var(--text-secondary);
+  border-top: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+  
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline::before {
+    left: 0;
+  }
+  
+  .timeline-item {
+    flex-direction: column !important;
+  }
+  
+  .timeline-content {
+    width: 100%;
+    margin-left: 2rem;
+  }
+  
+  .timeline-dot {
+    left: 0;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <a href="#" class="logo">VW</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h3>Hi, I'm</h3>
+      <h1>Vibhanshu Waghmare</h1>
+      <h2>AI Engineer & Data Scientist</h2>
+      <p>Specializing in Generative AI, LLMs, Multi-Agent Systems & Computer Vision. Research-driven engineer with hands-on experience at ISRO NRSC, Brainovision Solutions and ARIES.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="Vibhanshu_Waghmare_Resume.pdf" download class="btn btn-secondary">
+          <i class="fas fa-download"></i> Resume
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="Profile_pic.png" alt="Vibhanshu Waghmare" class="profile-pic">
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>I'm an AI Engineer passionate about building intelligent systems that solve real-world problems. With expertise in Generative AI, LLMs, and Computer Vision, I've contributed to cutting-edge projects at prestigious institutions like ISRO NRSC and Aryabhatta Research Institute of Observational Sciences (ARIES).</p>
+      <p>My journey in AI has been driven by curiosity and a desire to push the boundaries of what's possible. From developing autonomous rovers to fine-tuning large language models, I thrive on challenges that require innovative thinking and technical excellence.</p>
+      <p> I done B.E. in Artificial Intelligence & Data Science with a CGPA of 8.61, currently working as Project Research Scientist in Indian Council of Medical Research(ICMR)</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box">
+        <h3>3+</h3>
+        <p>Internships</p>
+      </div>
+      <div class="stat-box">
+        <h3>10+</h3>
+        <p>Projects</p>
+      </div>
+      <div class="stat-box">
+        <h3>1</h3>
+        <p>Research Paper</p>
+      </div>
+      <div class="stat-box">
+        <h3>1st</h3>
+        <p>Hackathon Winner</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills">
+  <div class="skills-container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Programming</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">LangGraph</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">CrewAI</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Keras</span>
+          <span class="skill-tag">scikit-learn</span>
+          <span class="skill-tag">YOLO</span>
+          <span class="skill-tag">NLP</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-robot"></i> AI & LLMs</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">GPT Models</span>
+          <span class="skill-tag">Hugging Face</span>
+          <span class="skill-tag">LLM Fine-tuning</span>
+          <span class="skill-tag">Multi-Agent Systems</span>
+          <span class="skill-tag">FastAPI</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-chart-line"></i> Data Science</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Seaborn</span>
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-microchip"></i> Robotics & IoT</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">ROS</span>
+          <span class="skill-tag">LiDAR</span>
+          <span class="skill-tag">Edge Computing</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">OpenCV</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Jupyter</span>
+          <span class="skill-tag">n8n</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="experience">
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>AI & Data Science Intern</h3>
+        <h4>ISRO National Remote Sensing Centre</h4>
+        <p class="date"><i class="far fa-calendar"></i> Jul 2024 - Dec 2024</p>
+        <p>Developed AIoT autonomous rover for space and agriculture applications. Implemented LiDAR mapping and navigation using ROS. Designed AI models for image processing and autonomous decision-making.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Data Science Intern</h3>
+        <h4>Brainovision Solutions Pvt. Ltd</h4>
+        <p class="date"><i class="far fa-calendar"></i> Jan 2024 - Mar 2024</p>
+        <p>Built ML models for customer segmentation using K-Means clustering. Deployed Linear Regression and Random Forest models. Created interactive dashboards for data insights.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Research Fellowship Intern</h3>
+        <h4>Aryabhatta Research Institute of Observational Sciences</h4>
+        <p class="date"><i class="far fa-calendar"></i> May 2023 - Aug 2023</p>
+        <p>Designed structure for daytime operation of ARIES Micro Pulse LiDAR. Developed real-time data acquisition and visualization algorithms. Integrated cloud-based LiDAR data processing pipelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <div class="projects-container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-content">
+          <h3>LangGraph Customer Support Agent</h3>
+          <p>11-Stage workflow with MCP server integration, multiple execution modes, and comprehensive state management for complete customer support automation.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">LangGraph</span>
+            <span class="tech-tag">AI Agents</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Vibhanshu-HUB007/LangGraph-Customer-Support-Agent" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Image Classification & LLM Tuning</h3>
+          <p>End-to-end model pipeline with YOLOv8, EfficientNet, and fine-tuned LLaMA 3.2 for structured entity extraction with < 20ms inference speed.</p>
+          <div class="project-tech">
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">YOLOv8</span>
+            <span class="tech-tag">LLaMA</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Vibhanshu-HUB007/Image-Classification_1-and-LLM-Tuning_2" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-content">
+          <h3>CrowdWisdom Trading AI Agent</h3>
+          <p>Autonomous CrewAI-based backend to discover and filter financial creators on X (Twitter) based on credibility rules for market sentiment analysis.</p>
+          <div class="project-tech">
+            <span class="tech-tag">CrewAI</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Financial AI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/Vibhanshu-HUB007/CrowdWisdomTrading-AI-Agent" target="_blank" class="project-link">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-content">
+          <h3>AI Autonomous Rover</h3>
+          <p>Published research on AI-powered autonomous rover for space exploration and agricultural applications with LiDAR mapping and ROS navigation.</p>
+          <div class="project-tech">
+            <span class="tech-tag">ROS</span>
+            <span class="tech-tag">LiDAR</span>
+            <span class="tech-tag">Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a href="https://jisem-journal.com/index.php/journal/article/view/9904" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2 class="section-title">Get In Touch</h2>
+  <div class="contact-content">
+    <p>I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out!</p>
+    <a href="mailto:vibhanshuw789@gmail.com" class="btn btn-primary">Say Hello</a>
+    <div class="social-links">
+      <a href="https://github.com/Vibhanshu-HUB007" target="_blank" class="social-link">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/vibhanshu-waghmare/" target="_blank" class="social-link">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:vibhanshuw789@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vibhanshu Waghmare. Built with passion for AI & Innovation.</p>
+</footer>
+
+<script>
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 100) {
+    nav.style.background = 'rgba(10, 25, 47, 0.98)';
+  } else {
+    nav.style.background = 'rgba(10, 25, 47, 0.95)';
+  }
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.skill-category, .timeline-item, .project-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'all 0.6s ease-out';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
+</a>a></section></div>p>i>h3></div>div>p>h3></h3></div>span>h3></i></span></div>span></span>span>div>span>div></span>span>h3></section>h3></div></a></div></section>li></li>li>""
