@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import ShaderBackground from '@/components/ui/shader-background';
+
 function App() {
   useEffect(() => {
     const aTags = document.querySelectorAll('a[href^="#"]');
@@ -44,7 +46,7 @@ function App() {
     <>
 
 
-<div className="grid-bg" aria-hidden="true"></div>
+<ShaderBackground />
 
 {/* Navigation */}
 <nav>
